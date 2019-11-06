@@ -16,7 +16,7 @@
                 output_dir :: file:filename_all(),
                 timer :: reference()}).
 
--define(DEFAULT_TIMEOUT, 60000).
+-define(DEFAULT_TIMEOUT, 100).
 
 
 %%====================================================================
@@ -37,8 +37,9 @@ init([Url, OutputDir]) ->
     {ok, #state{url = Url, output_dir = OutputDir, timer = Ref}}.
 
 handle_info({timeout, Ref, fetch_now}, #state{timer=Ref}=State) ->
-    {ok, 200, Ref} = hackney:request(get, State#state.url),
-    hackney:stream_body(Ref),
+    {ok, 200, Response} = hackney:request(get, State#state.url),
+    {ok, Body} = hackney:body(Response),
+    xmerl:string(binary_to_list(Body)),
     {noreply, State};
 handle_info(_Info, State) ->
     {noreply, State}.
@@ -48,3 +49,4 @@ handle_call(_Request, _From, State) ->
 
 handle_cast(_Request, State) ->
     {noreply, State}.
+

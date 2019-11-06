@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+<channel>
+    <title>Erlang.org News RSS</title>
+    <link>http://www.erlang.org/rss/news</link>
+    <description>
+      Hot and fresh Erlang.org RSS news
+    </description>
+    <language>en</language>
+    
+    <item>
+        <title>Mailing-lists migration</title>
+        <link>http://www.erlang.org/news/134</link>
+        <pubDate>Thu, 24 Oct 2019 00:00:00 GMT</pubDate>
+        <description>
+            img src=http://www.erlang.org/upload/news/
+            &lt;p&gt;We have migrated our email-list to a new server, and during the move we accidentally sent out a email to everyone saying that you have been unsubscribed from the email-list.&lt;/p&gt;
+
+&lt;p&gt;This is not true, and you are still subscribed to all the list you where subscribed to before this happened.&lt;/p&gt;
+
+&lt;p&gt;This move might be accompanied by a small delay in email traffic due to MX propagation delays.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;We do apologize for the inconvenience!&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+        </description>
+        <category>News</category>
+    </item>
+    
+    <item>
+        <title>Erlang OTP 22.1 is released</title>
+        <link>http://www.erlang.org/news/133</link>
+        <pubDate>Wed, 18 Sep 2019 00:00:00 GMT</pubDate>
+        <description>
+            img src=http://www.erlang.org/upload/news/
+            &lt;h2&gt;Potential Incompatibilities&lt;/h2&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Mnesia: Transactions with sticky locks could with async_asym transactions be committed in the wrong order, since asym transactions are spawned on the remote nodes. To fix this bug the communication protocol between mnesia nodes had to be updated, thus mnesia will no longer be able to connect to nodes earlier than mnesia-4.14 ,first realeased in OTP-19.0.&lt;/li&gt;
+	&lt;li&gt;Stdlib: Debugging of time-outs in gen_statem has been improved. Starting a time-out is now logged in sys:log and sys:trace. Running time-outs are visible in server crash logs, and with sys:get_status. Due to this system events {start_timer, Action, State} and {insert_timout, Event, State} have been added, which may surprise tools that rely on the format of these events. New features: The EventContent of a running time-out can be updated with {TimeoutType, update, NewEventContent}. Running time-outs can be cancelled with {TimeoutType, cancel} which is more readable than using Time = infinity.&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;{rel, Name, Vsn, RelApps, Opts}&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Highlights&lt;/h2&gt;
+
+&lt;h3&gt;Compiler:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;erlc can now automatically use a compile server to avoid starting an Erlang system for each file to be compiled in a multi-file project. See the documentation for how to enable it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Standard libraries:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;SSL: Basic support for TLS 1.3 Client for experimental use. For more information see the Standards Compliance chapter of the User&amp;#39;s Guide.&lt;/li&gt;
+	&lt;li&gt;crypto: The Message Authentication Codes (MAC) CMAC, HMAC and Poly1305 are unified into common functions in the New Crypto API. See the manual for CRYPTO.&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt; cipher_info/1&lt;/span&gt;&amp;nbsp;functions returns maps with information about the hash or cipher in the argument.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;For more details see&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_src_22.1.readme&quot;&gt;http://erlang.org/download/otp_src_22.1.readme&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pre built versions for Windows can be fetched here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_win32_22.1.exe&quot;&gt;http://erlang.org/download/otp_win32_22.1.exe&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_win64_22.1.exe&quot;&gt;http://erlang.org/download/otp_win64_22.1.exe&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Online documentation can be browsed here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/doc/search/&quot;&gt;http://erlang.org/doc/search/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The source tarball can be fetched here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_src_22.1.tar.gz&quot; rel=&quot;nofollow&quot;&gt;http://erlang.org/download/otp_src_22.1.tar.gz&lt;/a&gt;&lt;br /&gt;
+The documentation can be fetched here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_doc_html_22.1.tar.gz&quot; rel=&quot;nofollow&quot;&gt;http://erlang.org/download/otp_doc_html_22.1.tar.gz&lt;/a&gt;&lt;br /&gt;
+The man pages can be fetched here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_doc_man_22.1.tar.gz&quot; rel=&quot;nofollow&quot;&gt;http://erlang.org/download/otp_doc_man_22.1.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The Erlang/OTP source can also be found at GitHub on the official Erlang repository:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/erlang/otp&quot;&gt;https://github.com/erlang/otp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/erlang/otp/releases/tag/OTP-22.1&quot;&gt;OTP-22.1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Thank you for all your contributions!&lt;/p&gt;
+
+        </description>
+        <category>News</category>
+    </item>
+    
+    <item>
+        <title>Erlang OTP 22.0 is released</title>
+        <link>http://www.erlang.org/news/132</link>
+        <pubDate>Tue, 14 May 2019 00:00:00 GMT</pubDate>
+        <description>
+            img src=http://www.erlang.org/upload/news/
+            &lt;h1&gt;OTP 22.0&lt;/h1&gt;
+
+&lt;p&gt;Erlang/OTP 22 is a new major release with new features and&amp;nbsp;improvements as well as incompatibilities.&lt;/p&gt;
+
+&lt;p&gt;For a deeper dive into the highlights of the OTP 22 release, you can read our blog here:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.erlang.org/OTP-22-Highlights/&quot;&gt;http://blog.erlang.org/OTP-22-Highlights/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Potential Incompatibilities&lt;/h2&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;gen_* behaviours:&amp;nbsp;If logging of the last N messages through&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;sys:log/2,3&lt;/span&gt;&amp;nbsp;is active for the server, this log is included in the terminate report.&lt;/li&gt;
+	&lt;li&gt;reltool: A new element, Opts, can now be included in a rel tuple in the reltool release specific configuration format:&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;{rel, Name, Vsn, RelApps, Opts}&lt;/span&gt;.&lt;/li&gt;
+	&lt;li&gt;All external pids/ports/refs created by&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;erlang:list_to_pid&lt;/span&gt;&amp;nbsp;and similar functions now compare equal to any other pid/port/ref with same number from that node.&lt;/li&gt;
+	&lt;li&gt;The old legacy&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;erl_interface&lt;/span&gt;&amp;nbsp;library is deprecated as of OTP 22, and will be removed in OTP 23. This does not apply to the&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;ei&lt;/span&gt;&amp;nbsp;library.&lt;/li&gt;
+	&lt;li&gt;VxWorks is deprecated as of OTP 22 and will be removed in OTP 23.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;New Features&lt;/h2&gt;
+
+&lt;h3&gt;Erts:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Support for Erlang Distribution protocol to split the payload of large messages&amp;nbsp;into several fragments.&lt;/li&gt;
+	&lt;li&gt;ETS option write_concurrency now also effects and improves scalability of ordered_set tables.&lt;/li&gt;
+	&lt;li&gt;The length/1 BIF used to calculate the length of the list in one go without yielding, even if the list was very long.&amp;nbsp;Now it yields when called with long lists.&lt;/li&gt;
+	&lt;li&gt;A new (still experimental) module&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;socket&lt;/span&gt;&amp;nbsp;is introduced. It is implemented as a NIF and the idea is that it shall be as &amp;quot;close as possible&amp;quot; to the OS level socket interface.&lt;/li&gt;
+	&lt;li&gt;Added the NIF function&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;enif_term_type&lt;/span&gt;, which helps avoid long sequences of&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;enif_is_xyz&lt;/span&gt;&amp;nbsp;by returning the type of the given term. This is especially helpful for NIFs that serialize terms, such as JSON encoders, where it can improve both performance and readability.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Compiler:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;The compiler has been rewritten to internally use an intermediate representation based on Static Single Assignment (SSA). The new intermediate representation makes more optimizations possible.
+	&lt;ul&gt;
+		&lt;li&gt;The binary matching optimizations are now applicable in many more circumstances than before.&lt;/li&gt;
+		&lt;li&gt;Type optimizations are now applied across local function calls, and will remove a lot more redundant type tests than before.&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;All compiler options that can be given in the source file can now be given in the option list on the command line for erlc.&lt;/li&gt;
+	&lt;li&gt;In OTP 22, HiPE (the native code compiler) is not fully functional. The reasons for this are new BEAM instructions for binary matching that the HiPE native code compiler does not support. If&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;erlc&lt;/span&gt;&amp;nbsp;is invoked with the&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;+native&lt;/span&gt;&amp;nbsp;option, and if any of the new binary matching instructions are used, the compiler will issue a warning and produce a BEAM file without native code.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Standard libraries:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Cover now uses the counters module instead of ets for updating counters. The new function cover:local_only/0 allows running Cover in a restricted but faster local-only mode. The increase in speed will vary depending on the type of code being cover-compiled, as an example&amp;nbsp;the compiler test suite runs more than twice as fast with the new Cover.&lt;/li&gt;
+	&lt;li&gt;A simple socket API is provided through the&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;socket&lt;/span&gt;&amp;nbsp;module. This is a low level API that does *not* replace&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;gen_[tcp|udp|sctp]&lt;/span&gt;. It is intended to *eventually* replace the inet driver. It also provides a basic API that facilitates the implementation of other protocols than TCP, UDP and SCTP. Known issues are; No support for the Windows OS (currently), a small term leakage. This feature will be classed as experimental in OTP 22.&lt;/li&gt;
+	&lt;li&gt;SSL: now uses the new logger API, including log levels and verbose debug logging.&lt;/li&gt;
+	&lt;li&gt;SSL: Basic support for TLS 1.3 Server for experimental use.&lt;/li&gt;
+	&lt;li&gt;crypto: The new&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;hash_info/1&lt;/span&gt;&amp;nbsp;and&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;cipher_info/1&lt;/span&gt;&amp;nbsp;functions returns maps with information about the hash or cipher in the argument.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;For more details see&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_src_22.0.readme&quot;&gt;http://erlang.org/download/otp_src_22.0.readme&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pre built versions for Windows can be fetched here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_win32_22.0.exe&quot;&gt;http://erlang.org/download/otp_win32_22.0.exe&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_win64_22.0.exe&quot;&gt;http://erlang.org/download/otp_win64_22.0.exe&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Online documentation can be browsed here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/doc/search/&quot;&gt;http://erlang.org/doc/search/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The Erlang/OTP source can also be found at GitHub on the official Erlang repository:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/erlang/otp&quot;&gt;https://github.com/erlang/otp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/erlang/otp/releases/tag/OTP-22.0&quot;&gt;OTP-22.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Thank you for all your contributions!&lt;/p&gt;
+
+        </description>
+        <category>News</category>
+    </item>
+    
+    <item>
+        <title>Erlang OTP 22.0-rc3 is available for testing!</title>
+        <link>http://www.erlang.org/news/129</link>
+        <pubDate>Wed, 24 Apr 2019 00:00:00 GMT</pubDate>
+        <description>
+            img src=http://www.erlang.org/upload/news/
+            &lt;h1&gt;This is the 3rd&amp;nbsp;release candidate for OTP 22.0&lt;/h1&gt;
+
+&lt;p&gt;Erlang/OTP 22 is a new major release with new features and&amp;nbsp;improvements as well as incompatibilities.&lt;/p&gt;
+
+&lt;p&gt;There are no major highlight for this release, as the main focus of this is bugfixes and polish.&lt;/p&gt;
+
+&lt;p&gt;Please consult the &lt;a href=&quot;http://erlang.org/download/otp_src_22.0-rc3.readme&quot;&gt;readme&lt;/a&gt;&amp;nbsp;for a detailed changelog for the release.&lt;/p&gt;
+
+&lt;p&gt;The intention with this release is to get feedback from our users. All feedback is welcome, even if it is only to say that it works for you, as it lets us know that the release candidate got some testing.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;h2&gt;Highlights in release candidate 2&lt;/h2&gt;
+
+&lt;h2&gt;Potential Incompatibilities&lt;/h2&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;gen_* behaviours:&amp;nbsp;If logging of the last N messages through&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;sys:log/2,3&lt;/span&gt;&amp;nbsp;is active for the server, this log is included in the terminate report.&lt;/li&gt;
+	&lt;li&gt;reltool: A new element, Opts, can now be included in a rel tuple in the reltool release specific configuration format:&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;{rel, Name, Vsn, RelApps, Opts}&lt;/span&gt;.&lt;/li&gt;
+	&lt;li&gt;All external pids/ports/refs created by&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;erlang:list_to_pid&lt;/span&gt;&amp;nbsp;and similar functions now compare equal to any other pid/port/ref with same number from that node.&lt;/li&gt;
+	&lt;li&gt;The old legacy&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;erl_interface&lt;/span&gt;&amp;nbsp;library is deprecated as of OTP 22, and will be removed in OTP 23. This does not apply to the&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;ei&lt;/span&gt;&amp;nbsp;library.&lt;/li&gt;
+	&lt;li&gt;VxWorks is deprecated as of OTP 22 and will be removed in OTP 23.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Additional highlights in release candidate 2&lt;/h2&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;A simple socket API is provided through the&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;socket&lt;/span&gt;&amp;nbsp;module. This is a low level API that does *not* replace&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;gen_[tcp|udp|sctp]&lt;/span&gt;. It is intended to *eventually* replace the inet driver. It also provides a basic API that facilitates the implementation of other protocols than TCP, UDP and SCTP. Known issues are; No support for the Windows OS (currently), a small term leakage. This feature will be classed as experimental in OTP 22.&lt;/li&gt;
+	&lt;li&gt;ssl: Basic support for TLS 1.3 Server for experimental use.&lt;/li&gt;
+	&lt;li&gt;In OTP 22, HiPE (the native code compiler) is not fully functional. The reasons for this are new BEAM instructions for binary matching that the HiPE native code compiler does not support. If&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;erlc&lt;/span&gt;&amp;nbsp;is invoked with the&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;+native&lt;/span&gt;&amp;nbsp;option, and if any of the new binary matching instructions are used, the compiler will issue a warning and produce a BEAM file without native code.&lt;/li&gt;
+	&lt;li&gt;erts: Added the NIF function&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;enif_term_type&lt;/span&gt;, which helps avoid long sequences of&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;enif_is_xyz&lt;/span&gt;&amp;nbsp;by returning the type of the given term. This is especially helpful for NIFs that serialize terms, such as JSON encoders, where it can improve both performance and readability.&lt;/li&gt;
+	&lt;li&gt;crypto: The new&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;hash_info/1&lt;/span&gt;&amp;nbsp;and&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;cipher_info/1&lt;/span&gt;&amp;nbsp;functions returns maps with information about the hash or cipher in the argument.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Highlights in release candidate 1&lt;/h2&gt;
+
+&lt;h3&gt;Erts:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Support for Erlang Distribution protocol to split the payload of large signals into several fragments.&lt;/li&gt;
+	&lt;li&gt;ETS option write_concurrency now also effects and improves scalability of ordered_set tables.&lt;/li&gt;
+	&lt;li&gt;The length/1 BIF used to calculate the length of the list in one go without yielding, even if the list was very long.&amp;nbsp;Now it yields when called with long lists.&lt;/li&gt;
+	&lt;li&gt;A new (still experimental) module&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;courier new&amp;quot;, courier, monospace;&quot;&gt;socket&lt;/span&gt;&amp;nbsp;is introduced. It is implemented as a NIF and the idea is that it shall be as &amp;quot;close as possible&amp;quot; to the OS level socket interface.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Compiler:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;The compiler has been rewritten to internally use an intermediate representation based on Static Single Assignment (SSA). The new intermediate representation makes more optimizations possible.
+	&lt;ul&gt;
+		&lt;li&gt;The binary matching optimizations are now applicable in many more circumstances than before.&lt;/li&gt;
+		&lt;li&gt;Type optimizations are now applied across local function calls, and will remove a lot more redundant type tests than before.&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;All compiler options that can be given in the source file can now be given in the option list on the command line for erlc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Standard libraries:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Cover now uses the counters module instead of ets for updating counters. The new function cover:local_only/0 allows running Cover in a restricted but faster local-only mode. The increase in speed will vary depending on the type of code being cover-compiled, as an example&amp;nbsp;the compiler test suite runs more than twice as fast with the new Cover.&lt;/li&gt;
+	&lt;li&gt;SSL now uses the new logger API, including log levels and verbose debug logging.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more details see&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_src_22.0-rc3.readme&quot;&gt;http://erlang.org/download/otp_src_22.0-rc3.readme&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pre built versions for Windows can be fetched here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_win32_22.0-rc3.exe&quot;&gt;http://erlang.org/download/otp_win32_22.0-rc3.exe&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_win64_22.0-rc3.exe&quot;&gt;http://erlang.org/download/otp_win64_22.0-rc3.exe&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Online documentation can be browsed here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/documentation/doc-11.0-rc3/doc&quot;&gt;http://erlang.org/documentation/doc-11.0-rc3/doc&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The Erlang/OTP source can also be found at GitHub on the official Erlang repository:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/erlang/otp&quot;&gt;https://github.com/erlang/otp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/erlang/otp/releases/tag/OTP-22.0-rc3&quot;&gt;OTP-22.0-rc3&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Thank you for all your contributions!&lt;/p&gt;
+
+        </description>
+        <category>News</category>
+    </item>
+    
+    <item>
+        <title>Erlang OTP 22.0-rc2 is available for testing!</title>
+        <link>http://www.erlang.org/news/128</link>
+        <pubDate>Wed, 27 Mar 2019 00:00:00 GMT</pubDate>
+        <description>
+            img src=http://www.erlang.org/upload/news/
+            &lt;h1&gt;OTP 22 Release Candidate 2&lt;/h1&gt;
+
+&lt;p&gt;This is the second of three planned release candidates before the OTP 22 release.&lt;/p&gt;
+
+&lt;p&gt;The intention with this release is to get feedback from our users. All feedback is welcome, even if it is only to say that it works for you, as it lets us know that the release candidate got some testing.&lt;/p&gt;
+
+&lt;p&gt;Erlang/OTP 22 is a new major release with new features and&amp;nbsp;improvements as well as incompatibilities.&lt;/p&gt;
+
+&lt;h2&gt;Potential Incompatibilities&lt;/h2&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;gen_* behaviours:&amp;nbsp;If logging of the last N messages through &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;sys:log/2,3&lt;/span&gt; is active for the server, this log is included in the terminate report.&lt;/li&gt;
+	&lt;li&gt;reltool: A new element, Opts, can now be included in a rel tuple in the reltool release specific configuration format: &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;{rel, Name, Vsn, RelApps, Opts}&lt;/span&gt;.&lt;/li&gt;
+	&lt;li&gt;All external pids/ports/refs created by &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;erlang:list_to_pid&lt;/span&gt; and similar functions now compare equal to any other pid/port/ref with same number from that node.&lt;/li&gt;
+	&lt;li&gt;The old legacy &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;erl_interface&lt;/span&gt; library is deprecated as of OTP 22, and will be removed in OTP 23. This does not apply to the &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;ei&lt;/span&gt; library.&lt;/li&gt;
+	&lt;li&gt;VxWorks is deprecated as of OTP 22 and will be removed in OTP 23.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Additional highlights in release candidate 2&lt;/h2&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;A simple socket API is provided through the &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;socket&lt;/span&gt; module. This is a low level API that does *not* replace &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;gen_[tcp|udp|sctp]&lt;/span&gt;. It is intended to *eventually* replace the inet driver. It also provides a basic API that facilitates the implementation of other protocols than TCP, UDP and SCTP. Known issues are; No support for the Windows OS (currently), a small term leakage. This feature will be classed as experimental in OTP 22.&lt;/li&gt;
+	&lt;li&gt;ssl: Basic support for TLS 1.3 Server for experimental use.&lt;/li&gt;
+	&lt;li&gt;In OTP 22, HiPE (the native code compiler) is not fully functional. The reasons for this are new BEAM instructions for binary matching that the HiPE native code compiler does not support. If &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;erlc&lt;/span&gt; is invoked with the &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;+native&lt;/span&gt; option, and if any of the new binary matching instructions are used, the compiler will issue a warning and produce a BEAM file without native code.&lt;/li&gt;
+	&lt;li&gt;erts: Added the NIF function &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;enif_term_type&lt;/span&gt;, which helps avoid long sequences of &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;enif_is_xyz&lt;/span&gt; by returning the type of the given term. This is especially helpful for NIFs that serialize terms, such as JSON encoders, where it can improve both performance and readability.&lt;/li&gt;
+	&lt;li&gt;crypto: The new &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;hash_info/1&lt;/span&gt; and &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;cipher_info/1&lt;/span&gt; functions returns maps with information about the hash or cipher in the argument.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Highlights in release candidate 1&lt;/h2&gt;
+
+&lt;h3&gt;Erts:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Support for Erlang Distribution protocol to split the payload of large signals into several fragments.&lt;/li&gt;
+	&lt;li&gt;ETS option write_concurrency now also effects and improves scalability of ordered_set tables.&lt;/li&gt;
+	&lt;li&gt;The length/1 BIF used to calculate the length of the list in one go without yielding, even if the list was very long.&amp;nbsp;Now it yields when called with long lists.&lt;/li&gt;
+	&lt;li&gt;A new (still experimental) module &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;socket&lt;/span&gt; is introduced. It is implemented as a NIF and the idea is that it shall be as &amp;quot;close as possible&amp;quot; to the OS level socket interface.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Compiler:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;The compiler has been rewritten to internally use an intermediate representation based on Static Single Assignment (SSA). The new intermediate representation makes more optimizations possible.
+	&lt;ul&gt;
+		&lt;li&gt;The binary matching optimizations are now applicable in many more circumstances than before.&lt;/li&gt;
+		&lt;li&gt;Type optimizations are now applied across local function calls, and will remove a lot more redundant type tests than before.&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;All compiler options that can be given in the source file can now be given in the option list on the command line for erlc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Standard libraries:&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Cover now uses the counters module instead of ets for updating counters. The new function cover:local_only/0 allows running Cover in a restricted but faster local-only mode. The increase in speed will vary depending on the type of code being cover-compiled, as an example&amp;nbsp;the compiler test suite runs more than twice as fast with the new Cover.&lt;/li&gt;
+	&lt;li&gt;SSL now uses the new logger API, including log levels and verbose debug logging.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more details see&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_src_22.0-rc2.readme&quot;&gt;http://erlang.org/download/otp_src_22.0-rc2.readme&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pre built versions for Windows can be fetched here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_win32_22.0-rc2.exe&quot;&gt;http://erlang.org/download/otp_win32_22.0-rc2.exe&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/download/otp_win64_22.0-rc2.exe&quot;&gt;http://erlang.org/download/otp_win64_22.0-rc2.exe&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Online documentation can be browsed here:&lt;br /&gt;
+&lt;a href=&quot;http://erlang.org/documentation/doc-11.0-rc2/doc&quot;&gt;http://erlang.org/documentation/doc-11.0-rc2/doc&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The Erlang/OTP source can also be found at GitHub on the official Erlang repository:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/erlang/otp&quot;&gt;https://github.com/erlang/otp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/erlang/otp/releases/tag/OTP-22.0-rc2&quot;&gt;OTP-22.0-rc2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Thank you for all your contributions!&lt;/p&gt;
+
+        </description>
+        <category>News</category>
+    </item>
+    
+</channel>
+</rss>
