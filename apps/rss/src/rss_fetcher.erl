@@ -39,7 +39,7 @@ init([Url, OutputDir]) ->
 handle_info({timeout, Ref, fetch_now}, #state{timer=Ref}=State) ->
     {ok, 200, Response} = hackney:request(get, State#state.url),
     {ok, Body} = hackney:body(Response),
-    xmerl:string(binary_to_list(Body)),
+    {ok, RssNews} = rss_reader:read(Body),
     {noreply, State};
 handle_info(_Info, State) ->
     {noreply, State}.
