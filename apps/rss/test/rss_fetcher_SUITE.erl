@@ -7,7 +7,7 @@
 
 -define(AN_URL, <<"https://host.com/some/rss">>).
 -define(OUT_DIR, <<"a/b/c">>).
-
+-define(TIMEOUT, 1000).
 
 all() ->
     [basic_fetch].
@@ -25,10 +25,10 @@ basic_fetch(Config) ->
     Data = filename:join([?config(data_dir, Config), "valid_rss.xml"]),
     {ok, B} = file:read_file(Data),
     meck:expect(hackney, request, fun(get, _) -> {ok, 200, Ref} end),
-    meck:expect(hackney, body, fun(Ref) -> {ok, B} end),
-    
+    meck:expect(hackney, body, fun(R) when R =:= Ref -> {ok, B} end),
+
     {ok, Pid} = rss_fetcher:start_link(?AN_URL, ?OUT_DIR),
 
-    meck:wait(hackney, request, '_', 2000),
+    meck:wait(hackney, request, '_', ?TIMEOUT),
 
     gen_server:stop(Pid).
